@@ -1,0 +1,37 @@
+/* As Palliñas — tokens de marca (gama marcada 2026-09-05) */
+:root {
+  /* A — vivos */
+  --ap-lima-oliva: #617402;
+  --ap-hierba-viva: #81B002;
+  --ap-lima-clara: #99C41E;
+  --ap-roble: #2F6519;
+  --ap-potting: #019734;
+  --ap-hoja: #4BA54B;
+
+  /* B — teales */
+  --ap-pino: #01644A;
+  --ap-teal: #007C64; /* ancla de marca */
+  --ap-esmeralda: #028E76;
+  --ap-musgo-oscuro: #025653;
+  --ap-turquesa: #027678;
+  --ap-cian: #01858A;
+
+  /* C — sage */
+  --ap-sage-claro: #C0D0BB;
+  --ap-menta: #B2D8B4;
+  --ap-sage-musgo: #6C8D6C;
+  --ap-oliva-tierra: #587246;
+  --ap-sage-medio: #A8BCA0;
+  --ap-niebla: #A2C7A6;
+
+  /* Neutros */
+  --ap-papel: #F7F5F0;
+  --ap-texto: #1F2A24;
+  --ap-texto-sec: #4A5A52;
+  --ap-blanco: #FFFFFF;
+
+  /* Atajos de uso */
+  --ap-cta: var(--ap-teal);
+  --ap-fondo: var(--ap-papel);
+  --ap-fondo-suave: var(--ap-sage-claro);
+}
