@@ -10,7 +10,6 @@ export default defineConfig({
     integrations: [react()],
     adapter: netlify({
         // Skip Netlify Edge/Blobs emulation in local astro dev.
-        // Production on Netlify still uses the adapter.
         devFeatures: false
     })
 });

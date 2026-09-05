@@ -1,25 +1,54 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const textures = [
+    { src: '/images/texture-1.jpg', alt: 'Detalle de baldosa y hoja' },
+    { src: '/images/texture-2.jpg', alt: 'Impronta de hoja en rojo' },
+    { src: '/images/texture-3.jpg', alt: 'Losas con hojas en el jardín' },
+    { src: '/images/texture-4.jpg', alt: 'Cubierta viva y bosque' },
+];
+
+const coverPhotos = [
+    { src: '/images/cover-1.jpg', alt: 'Arce rojo junto a la piedra en As Palliñas' },
+    { src: '/images/cover-3.jpg', alt: 'Flores y muro de piedra en el bosque' },
+    { src: '/images/cover-4.jpg', alt: 'Piedra musgosa entre robles' },
+    { src: '/images/cover-5.jpg', alt: 'Cabaña de madera en la carballeira' },
+];
 ---
 
 <Layout title="As Palliñas — bosque de creación en Crecente">
-    <section class="relative min-h-[78vh] flex items-end">
-        <img
-            src="/images/hero.jpg"
-            alt="As Palliñas: carballeira y piedra en Crecente"
-            class="absolute inset-0 w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#1F2A24]/75 via-[#1F2A24]/25 to-transparent"></div>
-        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 pb-16 sm:pb-24 pt-40">
-            <p class="eyebrow text-papel/80 mb-4">Crecente · Pontevedra</p>
-            <h1 class="text-papel max-w-3xl mb-6">As Palliñas</h1>
-            <p class="text-papel/90 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed">
-                Una carballeira junto al Miño. Un sitio para crear con calma.
-            </p>
-            <div class="flex flex-wrap gap-3">
-                <a href="#el-bosque" class="btn btn-light">El bosque</a>
-                <a href="#espacios" class="btn btn-outline border-papel text-papel hover:bg-papel hover:text-texto">Los espacios</a>
-                <a href="https://wa.me/34607223349" class="btn btn-outline border-papel text-papel hover:bg-papel hover:text-texto" target="_blank" rel="noopener noreferrer">Cuéntanos tu idea</a>
+    <section class="cover-grid" aria-label="Portada">
+        <!-- Franja de texturas (4 columnas) -->
+        <div class="cover-row cover-textures" aria-hidden="true">
+            {
+                textures.map((t) => (
+                    <div class="cover-col">
+                        <img src={t.src} alt="" />
+                    </div>
+                ))
+            }
+        </div>
+
+        <!-- Cuatro fotos de lugar -->
+        <div class="cover-row cover-photos">
+            {
+                coverPhotos.map((photo) => (
+                    <div class="cover-col">
+                        <img src={photo.src} alt={photo.alt} />
+                    </div>
+                ))
+            }
+            <div class="cover-copy">
+                <h1>Una carballeira junto al Miño.<br />Un sitio para crear con calma.</h1>
+                <a
+                    href="https://wa.me/34607223349"
+                    class="cover-cta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Cuéntanos tu idea
+                    <span class="arrow" aria-hidden="true">→</span>
+                </a>
             </div>
         </div>
     </section>
@@ -33,15 +62,13 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
+    <!-- El bosque — mosaico 1 grande + 2 -->
     <section id="el-bosque" class="section-pad bg-sage-medio/50">
-        <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
-            <div class="img-frame order-2 lg:order-1">
-                <img src="/images/bosque.jpg" alt="Helecho en la carballeira de As Palliñas" loading="lazy" />
-            </div>
-            <div class="order-1 lg:order-2">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10">
+            <div class="mb-10 max-w-xl">
                 <p class="eyebrow mb-3">01</p>
                 <h2 class="text-primary mb-6">El bosque</h2>
-                <div class="space-y-4 text-texto-sec text-lg leading-relaxed max-w-lg">
+                <div class="space-y-4 text-texto-sec text-lg leading-relaxed">
                     <p>
                         La carballeira es vieja. Al lado, donde había eucaliptos, fuimos limpiando y dejando que el terreno se acomodara. A eso le llamamos jardín de sutura.
                     </p>
@@ -53,15 +80,28 @@ import Layout from '../layouts/Layout.astro';
                     </p>
                 </div>
             </div>
+            <div class="trio-mosaic">
+                <figure class="trio-main">
+                    <img src="/images/bosque-1.jpg" alt="Helecho en la carballeira" loading="lazy" />
+                </figure>
+                <figure class="trio-side">
+                    <img src="/images/bosque-2.jpg" alt="Lirio y estanque en el jardín de sutura" loading="lazy" />
+                </figure>
+                <figure class="trio-side">
+                    <img src="/images/bosque-3.jpg" alt="Luz entre los árboles" loading="lazy" />
+                </figure>
+            </div>
         </div>
     </section>
 
-    <section id="espacios" class="section-pad bg-sage">
-        <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
-            <div>
-                <p class="eyebrow mb-3">02</p>
-                <h2 class="text-primary mb-6">Espacios</h2>
-                <div class="space-y-4 text-texto-sec text-lg leading-relaxed max-w-lg">
+    <!-- Espacios — full-bleed + franja de dos -->
+    <section id="espacios" class="section-bleed">
+        <div class="bleed-hero">
+            <img src="/images/espacios-1.jpg" alt="Cubierta viva y ruina en As Palliñas" loading="lazy" />
+            <div class="bleed-copy">
+                <p class="eyebrow text-papel/80 mb-3">02</p>
+                <h2 class="text-papel mb-5">Espacios</h2>
+                <div class="space-y-4 text-papel/90 text-lg leading-relaxed max-w-lg">
                     <p>
                         El corazón es la carballeira, cuando el tiempo deja estar fuera. Si llueve o aprieta el frío, el taller cubre el trabajo.
                     </p>
@@ -70,21 +110,24 @@ import Layout from '../layouts/Layout.astro';
                     </p>
                 </div>
             </div>
-            <div class="img-frame">
-                <img src="/images/espacios.jpg" alt="Cubierta viva y piedra en As Palliñas" loading="lazy" />
-            </div>
+        </div>
+        <div class="bleed-pair">
+            <figure>
+                <img src="/images/espacios-2.jpg" alt="Interior de la ruina" loading="lazy" />
+            </figure>
+            <figure>
+                <img src="/images/espacios-3.jpg" alt="Techo verde entre el bosque" loading="lazy" />
+            </figure>
         </div>
     </section>
 
-    <section id="residencias" class="section-pad bg-sage-medio/50">
-        <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
-            <div class="img-frame order-2 lg:order-1">
-                <img src="/images/residencias.jpg" alt="Estancia junto al bosque en As Palliñas" loading="lazy" />
-            </div>
-            <div class="order-1 lg:order-2">
+    <!-- Residencias — texto + mosaico vertical -->
+    <section id="residencias" class="section-pad bg-sage">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 resid-grid">
+            <div>
                 <p class="eyebrow mb-3">03</p>
                 <h2 class="text-primary mb-6">Residencias</h2>
-                <div class="space-y-4 text-texto-sec text-lg leading-relaxed max-w-lg mb-8">
+                <div class="space-y-4 text-texto-sec text-lg leading-relaxed mb-8">
                     <p>
                         A veces alguien necesita tiempo aquí. No un programa cerrado: un sitio donde dormir la idea junto al bosque y trabajar sin prisa.
                     </p>
@@ -92,10 +135,23 @@ import Layout from '../layouts/Layout.astro';
                 </div>
                 <a href="https://wa.me/34607223349" class="btn" target="_blank" rel="noopener noreferrer">Hablar de una residencia</a>
             </div>
+            <div class="trio-stack">
+                <figure>
+                    <img src="/images/residencias-1.jpg" alt="Flores junto a la estancia" loading="lazy" />
+                </figure>
+                <div class="trio-stack-pair">
+                    <figure>
+                        <img src="/images/residencias-2.jpg" alt="Cabaña al atardecer" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="/images/residencias-3.jpg" alt="Interior con luz suave" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="eventos" class="section-pad bg-sage">
+    <section id="eventos" class="section-pad bg-sage-medio/50">
         <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
             <div>
                 <p class="eyebrow mb-3">04</p>
@@ -115,7 +171,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <section id="contacto" class="section-pad bg-sage-medio/50">
+    <section id="contacto" class="section-pad bg-sage">
         <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
             <div class="img-frame order-2 lg:order-1">
                 <img src="/images/contacto.jpg" alt="Vista del lugar As Palliñas" loading="lazy" />
