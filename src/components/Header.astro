@@ -1,30 +1,31 @@
 ---
-import Logo from '../components/Logo.astro';
-
 const navItems = [
-    { linkText: 'El bosque', href: '/#el-bosque' },
-    { linkText: 'Espacios', href: '/#espacios' },
-    { linkText: 'Residencias', href: '/#residencias' },
-    { linkText: 'Eventos', href: '/#eventos' },
-    { linkText: 'Contacto', href: '/#contacto' }
+    { linkText: 'El bosque', href: '#el-bosque' },
+    { linkText: 'Espacios', href: '#espacios' },
+    { linkText: 'Residencias', href: '#residencias' },
+    { linkText: 'Eventos', href: '#eventos' },
+    { linkText: 'Contacto', href: '#contacto' }
 ];
 ---
 
-<nav class="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-10 sm:pb-16">
-    <a href="/" class="no-underline">
-        <Logo />
-    </a>
-    {
-        !!navItems?.length && (
-            <ul class="flex flex-wrap gap-x-1 gap-y-1 ml-auto">
-                {navItems.map((item) => (
+<header class="sticky top-0 z-40 bg-sage/90 backdrop-blur-sm border-b border-[#6C8D6C]/25">
+    <nav class="flex flex-wrap items-center gap-4 px-6 sm:px-10 py-4 max-w-6xl mx-auto">
+        <a href="/" class="no-underline flex items-center gap-3 shrink-0">
+            <img src="/images/logo.png" alt="As Palliñas" class="h-14 sm:h-16 w-auto" width="80" height="160" />
+        </a>
+        <ul class="flex flex-wrap gap-x-1 gap-y-1 ml-auto">
+            {
+                navItems.map((item) => (
                     <li>
-                        <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2 no-underline text-texto-sec hover:text-primary">
+                        <a
+                            href={item.href}
+                            class="inline-block px-2 py-2 sm:px-3 text-xs sm:text-sm uppercase tracking-[0.14em] text-texto no-underline"
+                        >
                             {item.linkText}
                         </a>
                     </li>
-                ))}
-            </ul>
-        )
-    }
-</nav>
+                ))
+            }
+        </ul>
+    </nav>
+</header>

@@ -3,91 +3,134 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="As Palliñas — bosque de creación en Crecente">
-    <section class="pb-16 sm:pb-20">
-        <p class="text-sm uppercase tracking-wide text-texto-sec mb-4">Crecente · Pontevedra</p>
-        <h1 class="mb-6 text-primary">As Palliñas</h1>
-        <p class="text-xl sm:text-2xl text-texto mb-4 max-w-2xl">
-            Una carballeira junto al Miño, en Crecente.
-        </p>
-        <p class="text-lg text-texto-sec mb-10 max-w-2xl">
-            Un sitio para crear con calma. Para venir con una idea —o sin ella— y estar un rato en el bosque.
-        </p>
-        <div class="flex flex-wrap gap-3">
-            <a href="#el-bosque" class="btn">El bosque</a>
-            <a href="#espacios" class="btn btn-outline">Los espacios</a>
-            <a
-                href="https://wa.me/34607223349"
-                class="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Cuéntanos tu idea
-            </a>
-        </div>
-    </section>
-
-    <section id="el-bosque" class="section-band-alt rounded-2xl">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="mb-6 text-primary">El bosque</h2>
-            <div class="max-w-2xl space-y-4 text-lg text-texto-sec">
-                <p>
-                    La carballeira es vieja. Al lado, donde había eucaliptos, fuimos limpiando y dejando que el terreno se acomodara. A eso le llamamos jardín de sutura.
-                </p>
-                <p>
-                    Al abrir el suelo aparecieron cuarzo y granito. Con esa piedra se levantaron las casas; el bosque las guarda ahora como ruinas.
-                </p>
-                <p>
-                    Julio J. Jiménez trabaja aquí. Del taller salen piezas, encuentros y, de vez en cuando, algo que no estaba previsto.
-                </p>
+    <section class="relative min-h-[78vh] flex items-end">
+        <img
+            src="/images/hero.jpg"
+            alt="As Palliñas: carballeira y piedra en Crecente"
+            class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1F2A24]/75 via-[#1F2A24]/25 to-transparent"></div>
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 pb-16 sm:pb-24 pt-40">
+            <p class="eyebrow text-papel/80 mb-4">Crecente · Pontevedra</p>
+            <h1 class="text-papel max-w-3xl mb-6">As Palliñas</h1>
+            <p class="text-papel/90 text-lg sm:text-xl max-w-xl mb-10 leading-relaxed">
+                Una carballeira junto al Miño. Un sitio para crear con calma.
+            </p>
+            <div class="flex flex-wrap gap-3">
+                <a href="#el-bosque" class="btn btn-light">El bosque</a>
+                <a href="#espacios" class="btn btn-outline border-papel text-papel hover:bg-papel hover:text-texto">Los espacios</a>
+                <a href="https://wa.me/34607223349" class="btn btn-outline border-papel text-papel hover:bg-papel hover:text-texto" target="_blank" rel="noopener noreferrer">Cuéntanos tu idea</a>
             </div>
         </div>
     </section>
 
-    <section id="espacios" class="section-band">
-        <h2 class="mb-6 text-primary">Espacios</h2>
-        <p class="max-w-2xl text-lg text-texto-sec">
-            El corazón es la carballeira, cuando el tiempo deja estar fuera. Si llueve o aprieta el frío, el taller cubre el trabajo.
-        </p>
-        <p class="max-w-2xl text-lg text-texto-sec mt-4">
-            Hay una ruina que todavía habla de las casas de piedra. Una cúpula para cuando hace falta recogimiento. Una capilla pequeña, más poética que litúrgica. Una roca que invita a quedarse mirando. Un huerto que sigue los ciclos del año.
-        </p>
-    </section>
-
-    <section id="residencias" class="section-band-alt rounded-2xl">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="mb-6 text-primary">Residencias</h2>
-            <p class="max-w-2xl text-lg text-texto-sec mb-6">
-                A veces alguien necesita tiempo aquí. No un programa cerrado: un sitio donde dormir la idea junto al bosque y trabajar sin prisa.
+    <section class="section-pad bg-sage">
+        <div class="max-w-3xl mx-auto px-6 sm:px-10 text-center">
+            <p class="eyebrow mb-6">Bosque de creación artística</p>
+            <p class="text-xl sm:text-2xl text-texto leading-relaxed">
+                Para venir con una idea —o sin ella— y estar un rato en el bosque.
             </p>
-            <p class="max-w-2xl text-lg text-texto-sec mb-8">
-                Si te interesa una estancia, escríbenos y lo vemos con calma.
-            </p>
-            <a href="https://wa.me/34607223349" class="btn" target="_blank" rel="noopener noreferrer">Hablar de una residencia</a>
         </div>
     </section>
 
-    <section id="eventos" class="section-band">
-        <h2 class="mb-6 text-primary">Eventos</h2>
-        <p class="max-w-2xl text-lg text-texto-sec">
-            Por aquí han pasado Tra-Palliñas, la bienal <em>Las cicatrices no se esconden</em>, el mercadillo en el bosque, un rakú que llenó el taller de humo y conversación.
-        </p>
-        <p class="max-w-2xl text-lg text-texto-sec mt-4">
-            Cada cosa deja fotos y un poco de memoria. La agenda de lo que viene se cuenta mejor por WhatsApp o Instagram, cuando está cerca.
-        </p>
+    <section id="el-bosque" class="section-pad bg-sage-medio/50">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
+            <div class="img-frame order-2 lg:order-1">
+                <img src="/images/bosque.jpg" alt="Helecho en la carballeira de As Palliñas" loading="lazy" />
+            </div>
+            <div class="order-1 lg:order-2">
+                <p class="eyebrow mb-3">01</p>
+                <h2 class="text-primary mb-6">El bosque</h2>
+                <div class="space-y-4 text-texto-sec text-lg leading-relaxed max-w-lg">
+                    <p>
+                        La carballeira es vieja. Al lado, donde había eucaliptos, fuimos limpiando y dejando que el terreno se acomodara. A eso le llamamos jardín de sutura.
+                    </p>
+                    <p>
+                        Al abrir el suelo aparecieron cuarzo y granito. Con esa piedra se levantaron las casas; el bosque las guarda ahora como ruinas.
+                    </p>
+                    <p>
+                        Julio J. Jiménez trabaja aquí. Del taller salen piezas, encuentros y, de vez en cuando, algo que no estaba previsto.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contacto" class="section-band-alt rounded-2xl">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="mb-6 text-primary">Contacto</h2>
-            <p class="text-lg text-texto mb-2">Paredes, 6 · 36493 Ribeira · Crecente (Pontevedra)</p>
-            <p class="text-lg text-texto-sec">
-                WhatsApp <a href="https://wa.me/34607223349" class="text-primary no-underline">+34 607 22 33 49</a><br />
-                <a href="mailto:aspallinhas@gmail.com" class="text-primary no-underline">aspallinhas@gmail.com</a><br />
-                Instagram <a href="https://instagram.com/aspallinhas" class="text-primary no-underline">@aspallinhas</a>
-            </p>
-            <p class="mt-8">
+    <section id="espacios" class="section-pad bg-sage">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
+            <div>
+                <p class="eyebrow mb-3">02</p>
+                <h2 class="text-primary mb-6">Espacios</h2>
+                <div class="space-y-4 text-texto-sec text-lg leading-relaxed max-w-lg">
+                    <p>
+                        El corazón es la carballeira, cuando el tiempo deja estar fuera. Si llueve o aprieta el frío, el taller cubre el trabajo.
+                    </p>
+                    <p>
+                        Hay una ruina que todavía habla de las casas de piedra. Una cúpula para cuando hace falta recogimiento. Una capilla pequeña, más poética que litúrgica. Una roca que invita a quedarse mirando. Un huerto que sigue los ciclos del año.
+                    </p>
+                </div>
+            </div>
+            <div class="img-frame">
+                <img src="/images/espacios.jpg" alt="Cubierta viva y piedra en As Palliñas" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <section id="residencias" class="section-pad bg-sage-medio/50">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
+            <div class="img-frame order-2 lg:order-1">
+                <img src="/images/residencias.jpg" alt="Estancia junto al bosque en As Palliñas" loading="lazy" />
+            </div>
+            <div class="order-1 lg:order-2">
+                <p class="eyebrow mb-3">03</p>
+                <h2 class="text-primary mb-6">Residencias</h2>
+                <div class="space-y-4 text-texto-sec text-lg leading-relaxed max-w-lg mb-8">
+                    <p>
+                        A veces alguien necesita tiempo aquí. No un programa cerrado: un sitio donde dormir la idea junto al bosque y trabajar sin prisa.
+                    </p>
+                    <p>Si te interesa una estancia, escríbenos y lo vemos con calma.</p>
+                </div>
+                <a href="https://wa.me/34607223349" class="btn" target="_blank" rel="noopener noreferrer">Hablar de una residencia</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="eventos" class="section-pad bg-sage">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
+            <div>
+                <p class="eyebrow mb-3">04</p>
+                <h2 class="text-primary mb-6">Eventos</h2>
+                <div class="space-y-4 text-texto-sec text-lg leading-relaxed max-w-lg">
+                    <p>
+                        Por aquí han pasado Tra-Palliñas, la bienal <em>Las cicatrices no se esconden</em>, el mercadillo en el bosque, un rakú que llenó el taller de humo y conversación.
+                    </p>
+                    <p>
+                        Cada cosa deja fotos y un poco de memoria. La agenda de lo que viene se cuenta mejor por WhatsApp o Instagram, cuando está cerca.
+                    </p>
+                </div>
+            </div>
+            <div class="img-frame">
+                <img src="/images/eventos.jpg" alt="Encuentro musical en el bosque de As Palliñas" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section-pad bg-sage-medio/50">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 split">
+            <div class="img-frame order-2 lg:order-1">
+                <img src="/images/contacto.jpg" alt="Vista del lugar As Palliñas" loading="lazy" />
+            </div>
+            <div class="order-1 lg:order-2">
+                <p class="eyebrow mb-3">05</p>
+                <h2 class="text-primary mb-6">Contacto</h2>
+                <p class="text-lg text-texto mb-2">Paredes, 6 · 36493 Ribeira · Crecente (Pontevedra)</p>
+                <p class="text-lg text-texto-sec leading-relaxed mb-8">
+                    WhatsApp <a href="https://wa.me/34607223349" class="text-primary no-underline">+34 607 22 33 49</a><br />
+                    <a href="mailto:aspallinhas@gmail.com" class="text-primary no-underline">aspallinhas@gmail.com</a><br />
+                    Instagram <a href="https://instagram.com/aspallinhas" class="text-primary no-underline">@aspallinhas</a>
+                </p>
                 <a href="https://wa.me/34607223349" class="btn" target="_blank" rel="noopener noreferrer">Cuéntanos tu idea</a>
-            </p>
+            </div>
         </div>
     </section>
 </Layout>

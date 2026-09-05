@@ -2,7 +2,7 @@
 @import './brand.css';
 
 @theme {
-    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Century Gothic', CenturyGothic, AppleGothic, 'Didact Gothic', ui-sans-serif, system-ui, sans-serif;
     --color-primary: #007C64;
     --color-primary-content: #F7F5F0;
     --color-complementary: #025653;
@@ -15,48 +15,82 @@
 }
 
 @layer base {
-    html, body {
-        @apply bg-sage text-texto;
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-sage text-texto antialiased;
+        font-family: var(--font-sans);
+        letter-spacing: 0.01em;
+    }
+
+    h1, h2, h3 {
+        font-family: var(--font-sans);
+        font-weight: 400;
+        letter-spacing: 0.02em;
     }
 
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
+        @apply text-4xl sm:text-5xl md:text-6xl leading-tight;
     }
 
     h2 {
-        @apply text-2xl font-bold sm:text-3xl;
+        @apply text-3xl sm:text-4xl leading-snug;
     }
 
     a:not(.btn) {
-        @apply transition hover:opacity-80;
+        @apply transition hover:opacity-70;
     }
 }
 
 @layer components {
     .btn {
-        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
-        padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
-        font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.5rem);
+        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center no-underline transition-colors tracking-wide uppercase text-xs sm:text-sm;
+        padding: 0.95rem 1.5rem;
+        border-radius: 0;
+        font-family: var(--font-sans);
+        letter-spacing: 0.12em;
+    }
 
-        &:hover {
-            @apply bg-[#028E76];
-        }
+    .btn:hover {
+        @apply bg-[#028E76];
     }
 
     .btn-outline {
-        @apply bg-menta/40 text-texto border border-[#007C64];
-
-        &:hover {
-            @apply bg-menta;
-        }
+        @apply bg-transparent text-texto border border-texto;
     }
 
-    .section-band {
-        @apply -mx-6 sm:-mx-12 px-6 sm:px-12 py-12 sm:py-16;
+    .btn-outline:hover {
+        @apply bg-texto text-papel;
     }
 
-    .section-band-alt {
-        @apply section-band bg-sage-medio/70;
+    .btn-light {
+        @apply bg-papel text-texto;
+    }
+
+    .btn-light:hover {
+        @apply bg-menta;
+    }
+
+    .eyebrow {
+        @apply text-xs uppercase tracking-[0.22em] text-texto-sec;
+    }
+
+    .section-pad {
+        @apply py-16 sm:py-24;
+    }
+
+    .split {
+        @apply grid gap-10 lg:grid-cols-2 lg:gap-16 items-center;
+    }
+
+    .img-frame {
+        @apply overflow-hidden w-full;
+        aspect-ratio: 4 / 3;
+    }
+
+    .img-frame img {
+        @apply w-full h-full object-cover;
     }
 }
