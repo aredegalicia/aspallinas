@@ -1,16 +1,15 @@
 @import 'tailwindcss';
+@import './brand.css';
 
 @theme {
     --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
-    --color-complementary: #355c7d;
-    --background-image-noise: linear-gradient(
-            to bottom,
-            color-mix(in oklab, var(--color-gray-950) 0%, transparent),
-            color-mix(in oklab, var(--color-gray-950) 100%, transparent)
-        ),
-        url('/images/noise.png');
+    --color-primary: #007C64;
+    --color-primary-content: #F7F5F0;
+    --color-complementary: #025653;
+    --color-papel: #F7F5F0;
+    --color-sage: #C0D0BB;
+    --color-texto: #1F2A24;
+    --color-texto-sec: #4A5A52;
 }
 
 @layer base {
@@ -23,7 +22,7 @@
     }
 
     a:not(.btn) {
-        @apply underline transition hover:opacity-80;
+        @apply transition hover:opacity-80;
     }
 
     pre {
@@ -37,36 +36,26 @@
 }
 
 @layer components {
-    .markdown {
-        > * {
-            @apply my-6;
-        }
-
-        :where(h1, h2) {
-            @apply mt-12 mb-6;
-        }
-
-        > :first-child {
-            @apply mt-0;
-        }
-
-        > :last-child {
-            @apply mb-0;
-        }
-    }
-
     .btn {
         @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
         padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
         font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
+        border-radius: var(--btn-border-radius, 0.5rem);
 
         &:hover {
-            @apply bg-primary/85;
+            @apply bg-[#028E76];
         }
 
         &:disabled {
             @apply text-gray-400 bg-gray-700;
+        }
+    }
+
+    .btn-outline {
+        @apply bg-transparent text-texto border border-[#007C64];
+
+        &:hover {
+            @apply bg-[#C0D0BB]/60;
         }
     }
 

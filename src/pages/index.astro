@@ -1,19 +1,87 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
 ---
 
-<Layout title="Welcome to Astro.">
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+<Layout title="As Palliñas — bosque de creación en Crecente">
+    <section class="pb-16 sm:pb-24">
+        <p class="text-sm uppercase tracking-wide text-texto-sec mb-4">Crecente · Pontevedra</p>
+        <h1 class="mb-6 text-primary">As Palliñas</h1>
+        <p class="text-xl sm:text-2xl text-texto mb-4 max-w-2xl">
+            Una carballeira junto al Miño, en Crecente.
+        </p>
+        <p class="text-lg text-texto-sec mb-10 max-w-2xl">
+            Un sitio para crear con calma. Para venir con una idea —o sin ella— y estar un rato en el bosque.
+        </p>
+        <div class="flex flex-wrap gap-3">
+            <a href="#el-bosque" class="btn">El bosque</a>
+            <a href="#espacios" class="btn btn-outline">Los espacios</a>
+            <a
+                href="https://wa.me/34607223349"
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Cuéntanos tu idea
+            </a>
+        </div>
+    </section>
+
+    <section id="el-bosque" class="py-12 sm:py-16 border-t border-[#A8BCA0]/50">
+        <h2 class="mb-6 text-primary">El bosque</h2>
+        <div class="max-w-2xl space-y-4 text-lg text-texto-sec">
+            <p>
+                La carballeira es vieja. Al lado, donde había eucaliptos, fuimos limpiando y dejando que el terreno se acomodara. A eso le llamamos jardín de sutura.
+            </p>
+            <p>
+                Al abrir el suelo aparecieron cuarzo y granito. Con esa piedra se levantaron las casas; el bosque las guarda ahora como ruinas.
+            </p>
+            <p>
+                Julio J. Jiménez trabaja aquí. Del taller salen piezas, encuentros y, de vez en cuando, algo que no estaba previsto.
+            </p>
+        </div>
+    </section>
+
+    <section id="espacios" class="py-12 sm:py-16 border-t border-[#A8BCA0]/50">
+        <h2 class="mb-6 text-primary">Espacios</h2>
+        <p class="max-w-2xl text-lg text-texto-sec">
+            El corazón es la carballeira, cuando el tiempo deja estar fuera. Si llueve o aprieta el frío, el taller cubre el trabajo.
+        </p>
+        <p class="max-w-2xl text-lg text-texto-sec mt-4">
+            Hay una ruina que todavía habla de las casas de piedra. Una cúpula para cuando hace falta recogimiento. Una capilla pequeña, más poética que litúrgica. Una roca que invita a quedarse mirando. Un huerto que sigue los ciclos del año.
+        </p>
+    </section>
+
+    <section id="residencias" class="py-12 sm:py-16 border-t border-[#A8BCA0]/50">
+        <h2 class="mb-6 text-primary">Residencias</h2>
+        <p class="max-w-2xl text-lg text-texto-sec mb-6">
+            A veces alguien necesita tiempo aquí. No un programa cerrado: un sitio donde dormir la idea junto al bosque y trabajar sin prisa.
+        </p>
+        <p class="max-w-2xl text-lg text-texto-sec mb-8">
+            Si te interesa una estancia, escríbenos y lo vemos con calma.
+        </p>
+        <a href="https://wa.me/34607223349" class="btn" target="_blank" rel="noopener noreferrer">Hablar de una residencia</a>
+    </section>
+
+    <section id="eventos" class="py-12 sm:py-16 border-t border-[#A8BCA0]/50">
+        <h2 class="mb-6 text-primary">Eventos</h2>
+        <p class="max-w-2xl text-lg text-texto-sec">
+            Por aquí han pasado Tra-Palliñas, la bienal <em>Las cicatrices no se esconden</em>, el mercadillo en el bosque, un rakú que llenó el taller de humo y conversación.
+        </p>
+        <p class="max-w-2xl text-lg text-texto-sec mt-4">
+            Cada cosa deja fotos y un poco de memoria. La agenda de lo que viene se cuenta mejor por WhatsApp o Instagram, cuando está cerca.
+        </p>
+    </section>
+
+    <section id="contacto" class="py-12 sm:py-16 border-t border-[#A8BCA0]/50">
+        <h2 class="mb-6 text-primary">Contacto</h2>
+        <p class="text-lg text-texto mb-2">Paredes, 6 · 36493 Ribeira · Crecente (Pontevedra)</p>
+        <p class="text-lg text-texto-sec">
+            WhatsApp <a href="https://wa.me/34607223349" class="text-primary no-underline">+34 607 22 33 49</a><br />
+            <a href="mailto:aspallinhas@gmail.com" class="text-primary no-underline">aspallinhas@gmail.com</a><br />
+            Instagram <a href="https://instagram.com/aspallinhas" class="text-primary no-underline">@aspallinhas</a>
+        </p>
+        <p class="mt-8">
+            <a href="https://wa.me/34607223349" class="btn" target="_blank" rel="noopener noreferrer">Cuéntanos tu idea</a>
+        </p>
+    </section>
 </Layout>
